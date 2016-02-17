@@ -1,0 +1,8 @@
+Name	Kartik Ayalasomayaja
+Login	ayasomayaula@cs.wisc.edu
+
+Name	Pavle Kostovic
+Login	pavle@cs.wisc.edu
+
+For Project 5, we created a checksum-protected file system from xv6's basic file system. To do this, we change sysfile.c and fs.c inside of kernel/ and changed a stat.h and fcntl.h in include/. the Header file changes were there to add a checksum and flags. In kernel/sysfile.c, we revised based on Remzi's video, to allow for T_CHECKED files.
+We had a ton of work to do in kernel/fs.c, including changing bmap(), itrunc(), stati(), readi() and writei(). All of those needed to be changed to accomodate the new checksum system. The last changes we made were user/filestat.c and user/check.c. These both just functioned to test the new system. check.c just allocated a protected file to see if that system worked, while filestat.c printed out all of the statistical information about the file itself.
